@@ -8,10 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    protected $appends = ['product_image'];
 
     // Const
     public const STATUS_ACTIVE    = 1;
     public const STATUS_INACTIVE  = 0;
+
+    // Method
+    public function getProductImageAttribute()
+    {
+        return asset('storage/product_images/'. $this->image);
+    }
 
     // Relations
     public function category()
