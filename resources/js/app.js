@@ -19,6 +19,10 @@ Vue.component(
     "product-edit",
     require("./components/products/ProductEdit").default
 );
+Vue.component(
+    "stock-manage",
+    require("./components/stocks/StockManage").default
+);
 
 import store from "./store";
 const app = new Vue({
