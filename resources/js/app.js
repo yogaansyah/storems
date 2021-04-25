@@ -23,6 +23,10 @@ Vue.component(
     "stock-manage",
     require("./components/stocks/StockManage").default
 );
+Vue.component(
+    "return-product",
+    require("./components/return_products/ReturnProduct").default
+);
 
 import store from "./store";
 const app = new Vue({

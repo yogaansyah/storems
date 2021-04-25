@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ReturnProductsController;
 use App\Http\Controllers\SizesController;
 use App\Http\Controllers\StocksController;
 
@@ -43,4 +44,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/stocks', [StocksController::class, 'stock'])->name('stock');
     Route::post('/stocks', [StocksController::class, 'stockSubmit'])->name('stockSubmit');
     Route::get('/stocks/history', [StocksController::class, 'history'])->name('stockHistory');
+    // Return Product
+    Route::get('/return-products', [ReturnProductsController::class, 'returnProduct'])->name('returnProduct');
+    Route::post('/return-products', [ReturnProductsController::class, 'returnProductSubmit'])->name('returnProductSubmit');
+    Route::get('/return-products/history', [ReturnProductsController::class, 'history'])->name('returnProductHistory');
 });
