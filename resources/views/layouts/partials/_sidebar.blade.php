@@ -30,69 +30,79 @@
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Starter Pages
+                            Menu
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('users.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('dashboard') }}"
+                                class="nav-link {{ request()->is('dashboard*') ? 'active' : '' }}">
+                                <i class="fa fa-home nav-icon"></i>
+                                <p>Dashboad</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('users.index') }}"
+                                class="nav-link {{ request()->is('users*') ? 'active' : '' }}">
+                                <i class="fa fa-users nav-icon"></i>
                                 <p>User</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('categories.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('categories.index') }}"
+                                class="nav-link {{ request()->is('categories*') ? 'active' : '' }}">
+                                <i class="fa fa-list nav-icon"></i>
                                 <p>Category</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('brands.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('brands.index') }}"
+                                class="nav-link {{ request()->is('brands*') ? 'active' : '' }}">
+                                <i class="fa fa-list nav-icon"></i>
                                 <p>Brand</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('sizes.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('sizes.index') }}"
+                                class="nav-link {{ request()->is('sizes*') ? 'active' : '' }}">
+                                <i class="fa fa-list nav-icon"></i>
                                 <p>Size</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('products.index') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('products.index') }}"
+                                class="nav-link {{ request()->is('products*') ? 'active' : '' }}">
+                                <i class="fa fa-list nav-icon"></i>
                                 <p>Product</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('stock') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('stock') }}"
+                                class="nav-link {{ request()->is('stocks') ? 'active' : '' }}">
+                                <i class="fa fa-cart-plus nav-icon"></i>
                                 <p>Stock</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('stockHistory') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('stockHistory') }}"
+                                class="nav-link {{ request()->is('stocks/history') ? 'active' : '' }}">
+                                <i class="fa fa-file nav-icon"></i>
                                 <p>Stock History</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('returnProduct') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('returnProduct') }}"
+                                class="nav-link {{ request()->is('return-products') ? 'active' : '' }}">
+                                <i class="fa fa-list nav-icon"></i>
                                 <p>Return Product</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('returnProductHistory') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                            <a href="{{ route('returnProductHistory') }}"
+                                class="nav-link {{ request()->is('return-products/history') ? 'active' : '' }}">
+                                <i class="fa fa-file nav-icon"></i>
                                 <p>Return Product History</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inactive Page</p>
                             </a>
                         </li>
                     </ul>
@@ -100,11 +110,10 @@
                 <li class="nav-item">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         this.closest('form').submit();">
 
-                        <i class="nav-icon fas fa-th"></i>{{ __('Log Out') }}
+                            <i class="fa fa-sign-out-alt"></i> {{ __('Log Out') }}
                         </a>
                     </form>
                 </li>

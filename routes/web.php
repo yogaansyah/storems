@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\BrandsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ReturnProductsController;
 use App\Http\Controllers\SizesController;
@@ -21,16 +22,14 @@ use App\Http\Controllers\UsersController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
 Route::get('/user/logout', [UsersController::class, 'logout'])->name('users.logout');
 
 Route::middleware(['auth:sanctum'])->group(function () {
+    // DASHBOARD
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     // USER
     Route::resource('users', UsersController::class);
     // CATEGORY

@@ -31,11 +31,11 @@
                 <div class="col-lg-12">
                     <div class="card card-primary card-outline">
                         <div class="card-body">
-                            <h5 class="card-title">User List</h5><br>
-
                             <a href="{{ route('users.create') }}" class="btn btn-sm btn-primary">
                                 <i class="fa fa-plus"></i> Add User
                             </a><br><br>
+
+                            <h5 class="card-title">User List</h5><br>
 
                             <table id="category" class="table table-bordered">
                                 <thead>
@@ -44,7 +44,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Created At</th>
-                                        <th>Action</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,7 +55,7 @@
                                                 <td>{{ $user->name ?? '' }}</td>
                                                 <td>{{ $user->email ?? '' }} @if (auth()->id() == $user->id) (you) @endif</td>
                                                 <td>{{ $user->created_at->format('d F Y') ?? '' }}</td>
-                                                <td>
+                                                <td class="text-center">
                                                     <a href="{{ route('users.edit', $user->id) }}"
                                                         class="btn btn-sm btn-info"><i class="fa fa-edit"></i> Edit</a>
 

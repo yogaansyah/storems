@@ -31,11 +31,11 @@
                 <div class="col-lg-12">
                     <div class="card card-primary card-outline">
                         <div class="card-body">
-                            <h5 class="card-title">Product List</h5><br>
-
                             <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary">
                                 <i class="fa fa-plus"></i> Add Product
                             </a><br><br>
+
+                            <h5 class="card-title">Product List</h5><br>
 
                             <table id="category" class="table table-bordered">
                                 <thead>
@@ -46,7 +46,7 @@
                                         <th>SKU</th>
                                         <th>Category</th>
                                         <th>Brand</th>
-                                        <th>Action</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,13 +55,13 @@
                                             <tr>
                                                 <td>{{ ++$key }}</td>
                                                 <td class="text-center">
-                                                    <img width="70px" src="{{ asset('storage/product_images/'. $product->image) }}" alt="">
+                                                    <img width="70px" height="74px" src="{{ asset('storage/product_images/'. $product->image) }}" alt="">
                                                 </td>
                                                 <td>{{ $product->name ?? '' }}</td>
                                                 <td>{{ $product->sku ?? '' }}</td>
                                                 <td>{{ $product->category->name ?? '' }}</td>
                                                 <td>{{ $product->brand->name ?? '' }}</td>
-                                                <td>
+                                                <td class="text-center">
                                                     <a href="{{ route('products.show', $product->id) }}"
                                                         class="btn btn-sm btn-primary"><i class="fa fa-desktop"></i> Show</a>
 

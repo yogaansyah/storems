@@ -31,18 +31,18 @@
                 <div class="col-lg-12">
                     <div class="card card-primary card-outline">
                         <div class="card-body">
-                            <h5 class="card-title">Sizes List</h5><br>
-
                             <a href="{{ route('sizes.create') }}" class="btn btn-sm btn-primary">
                                 <i class="fa fa-plus"></i> Add Size
                             </a><br><br>
+
+                            <h5 class="card-title">Sizes List</h5><br>
 
                             <table id="category" class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>#SL</th>
                                         <th>Size</th>
-                                        <th>Action</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,7 +51,7 @@
                                             <tr>
                                                 <td>{{ ++$key }}</td>
                                                 <td>{{ $size->size ?? '' }}</td>
-                                                <td>
+                                                <td class="text-center">
                                                     <a href="{{ route('sizes.edit', $size->id) }}"
                                                         class="btn btn-sm btn-info"><i class="fa fa-edit"></i> Edit</a>
 
