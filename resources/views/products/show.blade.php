@@ -94,7 +94,7 @@
                             <br />
 
                             <div class="card-body text-center">
-                                <img width="300px" src="{{ asset('storage/product_images/'. $product->image) }}">
+                                <img width="300px" src="{{ asset('images/product_images/'. $product->image) }}">
                             </div>
                         </div>
                     </div>

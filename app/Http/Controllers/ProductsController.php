@@ -80,7 +80,7 @@ class ProductsController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->image;
             $name = Str::random(60) . '.' . $image->getClientOriginalExtension();
-            $image->storeAs('public/product_images', $name);
+            $image->move('images/product_images', $name);
             $product->image = $name;
         }
 

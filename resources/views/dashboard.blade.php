@@ -116,7 +116,7 @@
                                         <td>{{ ++$key }}</td>
                                         <td class="text-center">
                                             <img width="70px" height="70px"
-                                                src="{{ asset('storage/product_images/' . $product->image) }}" alt="">
+                                                src="{{ asset('images/product_images/' . $product->image) }}" alt="">
                                         </td>
                                         <td>{{ $product->name ?? '' }}</td>
                                         <td>{{ $product->sku ?? '' }}</td>
